@@ -1,0 +1,13 @@
+html
+	head
+		title= 'Person List'
+	body
+		h1= 'Person List'
+	table
+		for person in personList
+			tr
+				td= person.id
+				td
+					a(href='/person/'+person.id) #{person.name}
+				td= person.address
+				td= person.phone
