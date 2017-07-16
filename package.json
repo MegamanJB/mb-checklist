@@ -1,0 +1,24 @@
+{
+  "name": "simple-done",
+  "version": "0.0.1",
+  "description": "Minimalist to-do app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "pug": "^0.1.0",
+    "requestify": "^0.2.5",
+    "fs": "^0.0.2",
+    "readline": "^1.3.0"
+  },
+  "engines": {
+    "node": "4.4.5"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "license": "MIT"
+}
