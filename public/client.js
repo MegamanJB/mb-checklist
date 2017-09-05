@@ -1,10 +1,29 @@
+
+$(document).ready(function(){
+  $(".textWord").on("tap",function(){
+    var word = $(this).text().trim();
+    var popup = document.getElementById("optionsPopup");
+    var aTag = popup.firstChild;
+    aTag.text = "Translate " + word + "?";
+    aTag.attributes["id"].value = word;
+    //aTag.attributes["href"].value = "http://www.morfix.co.il/en/" + word;
+  });
+});
+
+function translateInNewTab(id)
+{
+  var url = "http://www.morfix.co.il/en/" + id;
+  var win = window.open(url, '_blank');
+  win.focus();
+}
+
 function load()
 {
   
 }
 
 function initialize() {
-
+  /*
   var addbtn	= document.getElementById("btn_add"),
 	    list	= document.getElementById("list"),
 	    input	= document.getElementById("txt_input"),
@@ -54,6 +73,7 @@ function initialize() {
 		localStorage.setItem('list', list.innerHTML);
 		return false;
 	}
+  */
   
   
   

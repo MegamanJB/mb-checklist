@@ -1,0 +1,44 @@
+
+
+html
+  head
+    
+    link(rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css")
+    script(src="https://code.jquery.com/jquery-1.11.3.min.js")
+    script(src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js")
+    
+    // Load my files after the generic JQuery and styles files
+    link(rel='stylesheet', href='/style.css')
+    script(src="/client.js")
+      
+  body
+  
+  div(data-role="popup" id="optionsPopup" class="ui-content")
+    a(href="#" id="#" onclick="translateInNewTab(this.id)") Translate #{word}?
+
+  //header(class='header')
+  //  form(method='POST' action='/translate')
+  //    input(class='header-form' type='text',name='word')
+  //    button(class='header-form' type='submit') Translate
+  
+  ul
+    for line in hebrewText
+      li 
+        p (#{line.verseNum}
+        p !{line.text}
+        for comment in line.commentary
+          li(class='comment')
+            p #{comment.title}
+            // p !{comment.text}
+            
+            //a(href="http://www.morfix.co.il/en/" + word) #{word} &nbsp;
+            //a(onclick="editItem(this.id)" id=word) #{word} &nbsp; 
+            //for word in comment.splitText
+            // span #{word} &nbsp; 
+            
+            for word in comment.splitText
+              a(href="#optionsPopup" data-rel="popup" class="textWord") #{word} &nbsp; 
+
+              
+
+  
