@@ -1,0 +1,46 @@
+html
+  head
+  body
+    h1
+      a(href='/') Learn Mishna Berurah!
+    
+    h2= 'Your Learning Score '
+      span(style='font-size:300%') #{userPoints}
+    
+    h2= questionText
+    a(class='button' href='/?random_question=1') New Question
+    a(class='button' style='padding-left: 5rem;' href='/?random_question=1&completedQuestion=1') Done! Another please.
+    
+  br
+  br
+  h3 TOC
+  ul
+    for section in sections
+      if (section.sectionNum == 1)
+        p Chelek Aleph
+      else if (section.sectionNum == 9)
+        br
+        p Chelek Bet
+      else if (section.sectionNum == 22)
+        br
+        p Chelek Gimmel
+      else if (section.sectionNum == 25)
+        br
+        p Chelek Daled
+      else if (section.sectionNum == 30)
+        br
+        p Chelek Hei
+      else if (section.sectionNum == 42)
+        br
+        p Chelek Vav
+      li
+        a(href='#' + section.sectionNum) #{section.sectionName}
+  ul
+    for section in sections
+      br
+      li
+        string(id=section.sectionNum) #{section.sectionName}
+          ul
+            for chapter in section.sectionChapters
+              li
+                a(href='/chapter/'+chapter.chapterNum) #{chapter.chapterNum}) #{chapter.name}
